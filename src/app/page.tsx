@@ -1,5 +1,6 @@
 "use client";
-import { motion, Variants } from "framer-motion";
+import { motion } from "framer-motion";
+import type { Variants } from "framer-motion"; // Correct import for Typescript
 import HeroComponent from "../Components/hero";
 import Header from "../Components/Header";
 import TextwithImage from "../Components/TextWithHover";
@@ -7,8 +8,8 @@ import Facecard from "../Components/Facecard";
 import MileStone from "../Components/MileStone";
 import { FooterDemo } from "@/Components/Foot";
 
-// SIMPLIFIED ANIMATION CONFIG (GUARANTEED TO WORK)
-const itemAnimation = {
+// Type your variants properly
+const itemAnimation: Variants = {
   hidden: { opacity: 0, y: 20 },
   visible: (i: number = 0) => ({
     opacity: 1,
@@ -21,7 +22,7 @@ const itemAnimation = {
   })
 };
 
-const titleAnimation = {
+const titleAnimation: Variants = {
   hidden: { opacity: 0 },
   visible: (i: number = 0) => ({
     opacity: 1,
@@ -32,9 +33,10 @@ const titleAnimation = {
   })
 };
 
+// Rest of your component remains exactly the same...
 export default function Home() {
   return (
-    <div>
+     <div>
       {/* Static Header (better for navigation) */}
       <Header />
       
